@@ -1,0 +1,13 @@
+{
+  "name": "barber-booking-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema web para reservar y administrar citas de una barbería.",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env server.js"
+  },
+  "engines": {
+    "node": ">=20.6"
+  }
+}
