@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171512">
+  <meta name="description" content="Reserva tu próximo corte en Corte & Estilo. Elige servicio, barbero y horario en minutos.">
+  <title>Reservas | Corte & Estilo</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="announcement"><span class="status-dot"></span> Agenda abierta · Reserva en menos de 2 minutos</div>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Corte y Estilo, inicio"><span class="brand-mark">C<span>&</span></span><span class="brand-name" id="brand-name">CORTE <b>&</b> ESTILO<small>BARBERÍA · BOGOTÁ</small></span></a>
+    <nav><a href="#servicios">Servicios</a><a href="#reservar">Reservar</a><button class="text-button" id="admin-open">Acceso barbería</button></nav>
+  </header>
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-image" role="img" aria-label="Interior cálido de una barbería"></div>
+      <div class="hero-copy"><span class="eyebrow"><span class="eyebrow-line"></span> TU ESTILO, A TU TIEMPO</span><h1>Un buen corte<br>cambia <em>todo.</em></h1><p>Reserva tu espacio, elige a tu barbero y llega listo para salir con otro nivel.</p><a href="#reservar" class="button button-primary">Reservar mi cita <span>↗</span></a><div class="hero-note"><span>✦</span> Sin llamadas. Sin esperas.</div></div>
+      <div class="hero-badge"><span>DESDE</span><strong>$18.000</strong><span>ASESORÍA PERSONALIZADA</span></div>
+      <div class="hero-index">01 <span>—</span> 03</div>
+    </section>
+    <section class="trust-row"><div><strong>01</strong><span>Elige tu servicio</span></div><i></i><div><strong>02</strong><span>Selecciona horario</span></div><i></i><div><strong>03</strong><span>Confirma y listo</span></div><div class="trust-hours"><span class="status-dot"></span> Lun – Sáb · 9:00 a. m. – 7:00 p. m.</div></section>
+    <section class="services-section" id="servicios"><div class="section-heading"><div><span class="eyebrow">EL CUIDADO QUE MERECES</span><h2>Servicios <em>con carácter.</em></h2></div><p>Buenos productos, técnica precisa y un momento para ti.</p></div><div class="service-grid" id="service-list"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div></section>
+    <section class="booking-section" id="reservar"><div class="booking-intro"><span class="eyebrow">AGENDA TU VISITA</span><h2>Tu próxima cita<br>empieza <em>aquí.</em></h2><p>Solo toma un par de minutos. Te esperamos en la silla.</p><div class="booking-facts"><span>✦ Confirmación inmediata</span><span>✦ Sin costo por reservar</span><span>✦ Cambia de horario por WhatsApp</span></div><div class="booking-aside">“La diferencia está en los detalles.”<small>— Nuestro oficio, tu estilo</small></div></div>
+      <form class="booking-card" id="booking-form" novalidate>
+        <div class="step-heading"><span class="step-number">01</span><div><strong>Arma tu cita</strong><small>Cuéntanos qué necesitas</small></div><span class="step-progress">PASO 1 DE 2</span></div>
+        <div class="fields-row"><label>Servicio<select id="service" required><option value="">Cargando servicios…</option></select></label><label>Barbero<select id="barber" required><option value="">Elige a tu barbero</option></select></label></div>
+        <div class="fields-row"><label>Fecha<input id="date" type="date" required></label><label class="slot-label">Hora<div class="slot-wrap" id="slots"><span class="slot-hint">Primero elige fecha y servicio</span></div><input id="time" type="hidden" required></label></div>
+        <div class="booking-divider"></div>
+        <div class="step-heading step-two"><span class="step-number">02</span><div><strong>Tus datos</strong><small>Para confirmar tu espacio</small></div></div>
+        <div class="fields-row"><label>Nombre completo<input id="name" autocomplete="name" placeholder="¿Cómo te llamas?" maxlength="80" required></label><label>WhatsApp<input id="phone" type="tel" autocomplete="tel" placeholder="+57 300 000 0000" maxlength="30" required></label></div>
+        <label>Nota para tu barbero <span class="optional">OPCIONAL</span><textarea id="notes" rows="2" maxlength="300" placeholder="¿Algún detalle que debamos saber?"></textarea></label>
+        <label class="whatsapp-consent"><input id="whatsapp-consent" type="checkbox"><span id="whatsapp-consent-text">Acepto recibir por WhatsApp la confirmación de la cita y un recordatorio 90 minutos antes.</span></label>
+        <div class="booking-summary" id="summary"><span>Selecciona servicio y horario</span><span id="summary-price"></span></div>
+        <button class="button button-primary button-full" id="submit-booking" type="submit">Confirmar mi cita <span>↗</span></button>
+        <p class="form-message" id="form-message" role="status"></p><p class="privacy-note">Al reservar aceptas que usemos tus datos para coordinar esta cita. Los mensajes por WhatsApp se envían solo si marcas la autorización.</p>
+      </form>
+    </section>
+    <section class="closing"><div class="closing-rule"></div><span>UN BUEN CORTE SE NOTA.</span><div class="closing-rule"></div><a href="#reservar">RESERVA TU ESPACIO ↗</a></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#inicio"><span class="brand-mark">C<span>&</span></span><span class="brand-name">CORTE <b>&</b> ESTILO<small>BARBERÍA · BOGOTÁ</small></span></a><span>Hecho con oficio. Reservado para ti.</span><button class="text-button" id="admin-footer">Acceso barbería</button><span>© <span id="year"></span> Corte & Estilo</span></footer>
+
+  <dialog id="admin-dialog" class="admin-dialog"><button class="dialog-close" id="admin-close" aria-label="Cerrar">×</button><div id="admin-content"></div></dialog>
+  <dialog id="success-dialog" class="success-dialog"><button class="dialog-close" id="success-close" aria-label="Cerrar">×</button><div class="success-icon">✓</div><span class="eyebrow">ESPACIO RESERVADO</span><h2>Listo. Te <em>esperamos.</em></h2><p id="success-copy"></p><a id="whatsapp-link" class="button button-whatsapp" target="_blank" rel="noreferrer">Avisar a la barbería por WhatsApp <span>↗</span></a><button class="button button-quiet" id="done-button">Volver a la página</button></dialog>
+  <script src="/app.js" defer></script>
+</body>
+</html>
